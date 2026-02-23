@@ -1,0 +1,30 @@
+def cross(a, b):
+    return {a[1] * b[2] - a[2] * b[1], a[0] * b[2] - a[2] * b[0], a[0] * b[1] - a[1] * b[0]}
+def dot(a, b):
+    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
+file = "test.txt"
+f = open(file)
+data = f.readlines()
+size = len(data)
+print(size)
+coords = [list() for i in range(size)]
+vel = [list() for i in range(size)]
+for i in range(size):
+    line = data[i]
+    allcoords, allvel = line.split(' @ ')
+    coords[i] = (list(map(int, allcoords.split(', '))))
+    vel[i] = (list(map(int, allvel.split(', '))))
+
+cnt = 0
+
+p1 = coords[1] - coords[0]
+p2 = coords[2] - coords[0]
+v1 = vel[1] - vel[0]
+v2 = vel[2] - vel[0]
+
+t1 = -(dot(cross(p1, p2), v2)) / (dot(cross(v1, p2), v2)
+t2 = -(dot(cross(p1, p2), v1)) / (dot(cross(p1, v2), v1)
+
+for i in range(3):
+    c =
+
